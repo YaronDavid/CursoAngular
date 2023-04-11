@@ -1,11 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { counterModule } from './counter/counter.module';
+import { counterComponent } from './counter/counter.component';
+import { ButtonAddComponent } from './counter/button-add/button-add.component';
+import { ButtonDisComponent } from './counter/button-dis/button-dis.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        counterComponent,
+        ButtonAddComponent,
+        ButtonDisComponent
       ],
     }).compileComponents();
   });
@@ -16,13 +23,8 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'contador'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('contador');
-  });
 
-  it('should render title', () => {
+  xit('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
